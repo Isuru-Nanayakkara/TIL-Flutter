@@ -1,16 +1,48 @@
-# markdown_demo
+# Markdown Demo
 
-A new Flutter project.
+How to show Markdown content using the [flutter_markdown](https://pub.dev/packages/flutter_markdown) package.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Steps
 
-A few resources to get you started if this is your first Flutter project:
+1. Add `flutter_markdown: ^0.6.9` to the **pubspec.yaml** file.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+2. Add a markdown file to the assets folder and add it in the **pubspec.yaml** file.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text("Flutter Markdown"),
+    ),
+    body: Padding(
+      padding: const EdgeInsets.all(20),
+      child: FutureBuilder(
+        future: rootBundle.loadString('assets/files/disclaimer.md'),
+        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+          if (snapshot.hasData) {
+            return MarkdownBody(
+              data: snapshot.data!,
+              styleSheet: MarkdownStyleSheet(
+                a: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTapLink: (text, url, title) {
+                debugPrint(url!);
+              },
+            );
+          }
+
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
+    ),
+  );
+}
+```
+
