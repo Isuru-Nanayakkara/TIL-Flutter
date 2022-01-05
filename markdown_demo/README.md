@@ -46,4 +46,4 @@ Widget build(BuildContext context) {
 }
 ```
 
-![demo](https://raw.githubusercontent.com/Isuru-Nanayakkara/TIL-Flutter/main/img/markdown.png)
+![demo](https://raw.githubusercontent.com/Isuru-Nanayakkara/TIL-Flutter/main/visuals/markdown.png)
