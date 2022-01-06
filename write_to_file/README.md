@@ -25,4 +25,4 @@ void _saveFile() async {
 }
 ```
 
-![demo](https://raw.githubusercontent.com/Isuru-Nanayakkara/TIL-Flutter/main/visuals/saved_file.png)
+![demo](https://raw.githubusercontent.com/Isuru-Nanayakkara/TIL-Flutter/main/visuals/file_in_downloads.png)
