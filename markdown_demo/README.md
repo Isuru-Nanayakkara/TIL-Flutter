@@ -4,7 +4,7 @@ How to show Markdown content.
 
 ---
 
-## Steps
+## Notes
 
 * Add [flutter_markdown](https://pub.dev/packages/flutter_markdown) package to the project.
 

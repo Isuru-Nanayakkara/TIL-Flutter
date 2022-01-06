@@ -6,7 +6,7 @@ Credit goes out to [Rohan Taneja](https://twitter.com/rohantaneja_) for this [so
 
 ---
 
-## Steps
+## Notes
 
 * Add [flutter_keyboard_visibility](https://pub.dev/packages/flutter_keyboard_visibility) package to the project.
 
