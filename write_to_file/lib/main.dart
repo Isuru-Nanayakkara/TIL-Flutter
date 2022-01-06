@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
 
+import 'package:android_path_provider/android_path_provider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,13 +30,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _saveFile() {
+  void _saveFile() async {
     final user = User(id: 1, firstName: 'Isuru', lastName: 'Nanayakkara');
 
     String json = jsonEncode(user);
-    debugPrint(json);
+    // debugPrint(json);
 
-    setState(() {});
+    try {
+      var downloadsDirPath = await AndroidPathProvider.downloadsPath;
+      debugPrint(downloadsDirPath);
+      File file = File('$downloadsDirPath/file.json');
+      file.writeAsString(json);
+      debugPrint('✅ Success');
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 
   @override
