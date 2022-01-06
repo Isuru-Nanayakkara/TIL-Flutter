@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       var downloadsDirPath = await AndroidPathProvider.downloadsPath;
       debugPrint(downloadsDirPath);
-      File file = File('$downloadsDirPath/file.json');
+      File file = File('$downloadsDirPath/file.txt');
       file.writeAsString(json);
       debugPrint('✅ Success');
     } catch (e) {
@@ -52,9 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Save File to Disk Demo'),
-      ),
-      body: const Center(
-        child: Text('Demo'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _saveFile,

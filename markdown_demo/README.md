@@ -1,14 +1,14 @@
 # Markdown Demo
 
-How to show Markdown content using the [flutter_markdown](https://pub.dev/packages/flutter_markdown) package.
+How to show Markdown content.
 
 ---
 
 ## Steps
 
-1. Add `flutter_markdown: ^0.6.9` to the **pubspec.yaml** file.
+* Add [flutter_markdown](https://pub.dev/packages/flutter_markdown) package to the project.
 
-2. Add a markdown file to the assets folder and add it in the **pubspec.yaml** file.
+* Add a markdown file to the assets folder and add it in the `pubspec.yaml` file.
 
 ```dart
 Widget build(BuildContext context) {
