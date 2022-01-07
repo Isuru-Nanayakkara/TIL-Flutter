@@ -13,7 +13,6 @@ void _saveFile() async {
   final user = User(id: 1, firstName: 'Isuru', lastName: 'Nanayakkara');
 
   String json = jsonEncode(user);
-  // debugPrint(json);
 
   try {
     var downloadsDirPath = await AndroidPathProvider.downloadsPath;
