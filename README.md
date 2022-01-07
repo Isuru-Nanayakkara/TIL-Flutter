@@ -11,5 +11,5 @@ This is a collection of projects I put together as I learned new things in Flutt
 * [Dismiss Keyboard](https://github.com/Isuru-Nanayakkara/TIL-Flutter/tree/main/dismiss_keyboard_demo)
 * [Write to File](https://github.com/Isuru-Nanayakkara/TIL-Flutter/tree/main/write_to_file)
 * Custom Fonts
-	* Google Fonts over HTTP
+	* [Google Fonts over HTTP](https://github.com/Isuru-Nanayakkara/TIL-Flutter/tree/main/custom_fonts/google_fonts_demo)
 	* Custom Font added manually
