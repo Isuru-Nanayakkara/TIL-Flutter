@@ -1,16 +1,67 @@
-# google_fonts_demo
+# Google Fonts Demo
 
-A new Flutter project.
+How to use [Google Fonts](https://fonts.google.com) in an app.
 
-## Getting Started
+---
+## Notes
 
-This project is a starting point for a Flutter application.
+* Add [google_fonts](https://pub.dev/packages/google_fonts) package to the project.
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        // Set app-wide font
+        textTheme: GoogleFonts.nunitoTextTheme(
+          Theme.of(context).textTheme,
+        ),
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Set a different font for a specific widget
+          Text(
+            'The quick brown fox jumps over the lazy dog',
+            style: GoogleFonts.poppins(),
+          ),
+          // Google Fonts with existing TextStyle
+          Text(
+            'The quick brown fox jumps over the dog',
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w300,
+              fontStyle: FontStyle.italic,
+              fontSize: 18,
+            ),
+          ),
+          // Google Fonts with existing TextStyle
+          Text(
+            'The quick brown fox jumps over the dog',
+            style: GoogleFonts.adventPro(
+              textStyle: Theme.of(context).textTheme.bodyText1,
+              fontSize: 18,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+![demo](https://raw.githubusercontent.com/Isuru-Nanayakkara/TIL-Flutter/main/img/google_fonts.png)
