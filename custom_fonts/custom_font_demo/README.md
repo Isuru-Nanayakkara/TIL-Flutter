@@ -1,16 +1,87 @@
-# custom_font_demo
+# Custom Font Demo
 
-A new Flutter project.
+How to use a custom font in app.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Notes
 
-A few resources to get you started if this is your first Flutter project:
+* [Official Docs](https://docs.flutter.dev/cookbook/design/fonts)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* Create a folder called _assets_ and a subfolder called _fonts_ inside it.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Add the font files to it. Only `.ttf` and `.otf` file types are supported.
+
+* Declare the font in `pubspec.yaml` file.
+
+```yaml
+flutter:
+
+  fonts:
+    - family: PostNoBillsColombo
+      fonts:
+        - asset: assets/fonts/PostNoBillsColombo-Light.ttf
+        - asset: assets/fonts/PostNoBillsColombo-Regular.ttf
+        - asset: assets/fonts/PostNoBillsColombo-Medium.ttf
+        - asset: assets/fonts/PostNoBillsColombo-SemiBold.ttf
+        - asset: assets/fonts/PostNoBillsColombo-Bold.ttf
+        - asset: assets/fonts/PostNoBillsColombo-ExtraBold.ttf
+```
+
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'PostNoBillsColombo',
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            'The quick brown fox jumps over the lazy dog',
+          ),
+          Text(
+            'The quick brown fox jumps over the dog',
+            style: TextStyle(
+              fontWeight: FontWeight.w300,
+              fontSize: 22,
+            ),
+          ),
+          Text(
+            'The quick brown fox jumps over the dog',
+            style: TextStyle(
+              fontSize: 22,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          Text(
+            'The quick brown fox jumps over the dog',
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 22,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+![demo](https://raw.githubusercontent.com/Isuru-Nanayakkara/TIL-Flutter/main/img/custom_font.png)

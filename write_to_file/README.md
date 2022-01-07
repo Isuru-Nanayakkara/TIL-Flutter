@@ -6,6 +6,8 @@ How to write data to a file and save it in the file system of an Android device.
 
 ## Notes
 
+* [Official Docs](https://docs.flutter.dev/cookbook/persistence/reading-writing-files)
+
 * Add [android_path_provider](https://pub.dev/packages/android_path_provider) package to the project.
 
 ```dart
@@ -23,7 +25,6 @@ void _saveFile() async {
   }
 }
 ```
-* [Official Docs](https://docs.flutter.dev/cookbook/persistence/reading-writing-files)
 
 
 ![demo](https://raw.githubusercontent.com/Isuru-Nanayakkara/TIL-Flutter/main/img/file_in_downloads.png)

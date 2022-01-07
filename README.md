@@ -12,4 +12,4 @@ This is a collection of projects I put together as I learned new things in Flutt
 * [Write to File](https://github.com/Isuru-Nanayakkara/TIL-Flutter/tree/main/write_to_file)
 * Custom Fonts
 	* [Google Fonts over HTTP](https://github.com/Isuru-Nanayakkara/TIL-Flutter/tree/main/custom_fonts/google_fonts_demo)
-	* Custom Font added manually
+	* [Custom Font added manually](https://github.com/Isuru-Nanayakkara/TIL-Flutter/tree/main/custom_fonts/custom_font_demo)
